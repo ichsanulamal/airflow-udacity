@@ -68,3 +68,34 @@ def final_project():
 
 
 final_project_dag = final_project()
+
+
+# LoadFactOperator(
+#     task_id='load_songplays_fact_table',
+#     table='songplays',
+#     sql_statement=SqlQueries.songplay_table_insert,
+#     dag=dag
+# )
+
+# LoadDimensionOperator(
+#     task_id='load_users_dim_table',
+#     table='users',
+#     sql_statement=SqlQueries.user_table_insert,
+#     insert_mode='truncate-insert',  # or 'append'
+#     dag=dag
+# )
+
+# run_quality_checks = DataQualityOperator(
+#         task_id='run_data_quality_checks',
+#         postgres_conn_id='your_postgres_conn_id',
+#         tests=[
+#             {
+#                 'sql': "SELECT COUNT(*) FROM users WHERE userid IS NULL;",
+#                 'expected_result': 0
+#             },
+#             {
+#                 'sql': "SELECT COUNT(*) FROM songs;",
+#                 'expected_result': 100  # Replace with your expected count
+#             }
+#         ]
+#     )
