@@ -5,7 +5,7 @@ from datetime import datetime
 
 
 def list_s3_buckets(**kwargs):
-    hook = S3Hook(aws_conn_id="aws_default")
+    hook = S3Hook(aws_conn_id="aws_credentials")
     client = hook.get_conn()
     response = client.list_buckets()
 
